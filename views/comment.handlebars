@@ -1,0 +1,13 @@
+<div>
+{{#if comments.length}}
+{{#each comments as |comment|}}
+    <div>
+      <h2 href="/comment/{{comment.id}}">{{comment.name}}</h2>
+      <h4>Description: </h4>
+      <p href="/comment/{{comment.id}}">{{comment.description}}</p>
+    </div>
+  {{/each}}
+  {{/if}}
+</div>
+
+<script src="./js/comment.js"></script>

@@ -1,0 +1,38 @@
+<div>
+  <div id="new">
+    <h3>Create a comment:</h3>
+
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-name">Comment name:</label>
+        <input class="form-input" type="text" id="comment-name" name="comment-name" />
+      </div>
+      <div class="form-group">
+        <label for="comment-description">Description:</label>
+        <textarea class="form-input" id="comment-description" name="comment-description"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if comments.length}}
+  <div class="col-md-6 comment-list">
+    <h3>My comments</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{comment.name}}</h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/comment.js"></script>
